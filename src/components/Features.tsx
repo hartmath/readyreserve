@@ -46,30 +46,31 @@ export const Features = () => {
   };
 
   return (
-    <section id="features" className="py-24 px-4 relative">
+    <section id="features" className="py-16 sm:py-24 px-4 relative">
       <div className="container mx-auto">
         {/* Target Section */}
-        <div className="mb-20 text-center">
-          <div className="inline-flex items-center gap-4 mb-8 px-6 py-3 rounded-full border border-accent/30 bg-accent/5">
-            <span className="text-sm text-muted-foreground">Built for</span>
-            <div className="w-px h-6 bg-accent/30" />
-            <span className="font-semibold">Top dealers</span>
+        <div className="mb-12 sm:mb-20 text-center">
+          <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-6 sm:mb-8 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-accent/30 bg-accent/5">
+            <span className="text-xs sm:text-sm text-muted-foreground">Built for</span>
+            <div className="w-px h-4 sm:h-6 bg-accent/30" />
+            <span className="font-semibold text-xs sm:text-sm">Top dealers</span>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             500+ leads a month? ReadyReserve™ follows up—automatically, persistently, and without excuses. 
             So you never leave money on the table.
           </p>
         </div>
 
         {/* Main Header */}
-        <div className="text-center mb-16 space-y-6">
-          <h2 className="text-4xl md:text-5xl font-bold">
+        <div className="text-center mb-12 sm:mb-16 space-y-4 sm:space-y-6">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold px-4">
             One simple system.{" "}
             <span className="block mt-2">Three big problems, gone.</span>
           </h2>
           <Button 
             variant="hero" 
             size="xl"
+            className="w-full sm:w-auto"
             onClick={handleBookDemo}
           >
             <ArrowRight className="mr-2 h-5 w-5" />
@@ -78,14 +79,14 @@ export const Features = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="p-8 bg-card/50 backdrop-blur-sm border-border hover:border-accent/50 transition-all duration-300 hover:shadow-lg"
+              className="p-6 sm:p-8 bg-card/50 backdrop-blur-sm border-border hover:border-accent/50 transition-all duration-300 hover:shadow-lg"
             >
-              <feature.icon className="w-12 h-12 mb-6 text-accent" strokeWidth={1.5} />
-              <h3 className="text-lg font-semibold mb-4 leading-tight">
+              <feature.icon className="w-10 h-10 sm:w-12 sm:h-12 mb-4 sm:mb-6 text-accent" strokeWidth={1.5} />
+              <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 leading-tight">
                 {feature.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">

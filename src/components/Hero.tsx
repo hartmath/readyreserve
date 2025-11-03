@@ -48,9 +48,9 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 px-4 py-32 text-center">
-        <div className="max-w-5xl mx-auto space-y-8 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+      <div className="container relative z-10 px-4 py-20 sm:py-32 text-center">
+        <div className="max-w-5xl mx-auto space-y-6 sm:space-y-8 animate-fade-in">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold leading-tight px-4">
             You're Not{" "}
             <span className="block">
               Short on Leads
@@ -58,26 +58,26 @@ export const Hero = () => {
             <span className="block">Just Follow-Up</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto px-4">
             <span className="text-accent font-semibold">ReadyReserve™</span> works every lead—engaging, following up,
             <br className="hidden md:block" />
             and booking appointments, 24/7.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Button variant="hero" size="xl" onClick={handleBookDemo}>
+            <Button variant="hero" size="xl" className="w-full sm:w-auto" onClick={handleBookDemo}>
               <ArrowRight className="mr-2 h-5 w-5" />
               BOOK A DEMO
             </Button>
           </div>
 
           {/* Video CTA */}
-          <div className="pt-12">
-            <div className="inline-flex items-center gap-6 px-8 py-6 rounded-lg bg-secondary/60 backdrop-blur-md border border-border">
-              <p className="text-sm text-muted-foreground max-w-md text-left">
+          <div className="pt-8 sm:pt-12 px-4">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 px-6 sm:px-8 py-6 rounded-lg bg-secondary/60 backdrop-blur-md border border-border">
+              <p className="text-sm text-muted-foreground max-w-md text-center sm:text-left">
                 Finally, a system that runs tight without running you ragged, no new hires, no CRM swap.
               </p>
-              <Button variant="video" size="default" className="flex-shrink-0" onClick={handleVideoClick}>
+              <Button variant="video" size="default" className="flex-shrink-0 w-full sm:w-auto" onClick={handleVideoClick}>
                 <Play className="mr-2 h-4 w-4 fill-current" />
                 SEE IT IN ACTION
               </Button>
@@ -87,8 +87,8 @@ export const Hero = () => {
       </div>
 
       {/* Decorative corners */}
-      <div className="absolute top-8 left-8 w-16 h-16 border-l-2 border-t-2 border-accent/30 z-20" />
-      <div className="absolute bottom-8 right-8 w-16 h-16 border-r-2 border-b-2 border-accent/30 z-20" />
+      <div className="absolute top-4 left-4 sm:top-8 sm:left-8 w-8 h-8 sm:w-16 sm:h-16 border-l-2 border-t-2 border-accent/30 z-20" />
+      <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 w-8 h-8 sm:w-16 sm:h-16 border-r-2 border-b-2 border-accent/30 z-20" />
     </section>
   );
 };

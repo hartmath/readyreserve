@@ -35,10 +35,10 @@ export const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="py-16 px-4 border-t border-border">
+    <footer id="contact" className="py-12 sm:py-16 px-4 border-t border-border">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
-          <div className="md:col-span-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
+          <div className="sm:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4 cursor-pointer">
               <div className="w-8 h-8 bg-accent rounded-sm" />
               <span className="text-xl font-bold">ReadyReserve</span>

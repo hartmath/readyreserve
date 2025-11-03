@@ -63,75 +63,75 @@ const CaseStudies = () => {
   
   return (
     <PageLayout>
-      <section className="py-24 px-4">
+      <section className="py-16 sm:py-24 px-4">
         <div className="container mx-auto">
           {/* Header */}
-          <div className="text-center mb-20 space-y-6">
-            <div className="inline-flex items-center gap-4 mb-8 px-6 py-3 rounded-full border border-accent/30 bg-accent/5">
-              <span className="text-sm text-muted-foreground">Real results</span>
-              <div className="w-px h-6 bg-accent/30" />
-              <span className="font-semibold">Real dealers</span>
+          <div className="text-center mb-12 sm:mb-20 space-y-4 sm:space-y-6">
+            <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-6 sm:mb-8 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-accent/30 bg-accent/5">
+              <span className="text-xs sm:text-sm text-muted-foreground">Real results</span>
+              <div className="w-px h-4 sm:h-6 bg-accent/30" />
+              <span className="font-semibold text-xs sm:text-sm">Real dealers</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold px-4">
               Success Stories
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
               See how top dealerships are transforming their lead management with ReadyReserve™.
             </p>
           </div>
 
           {/* Case Studies */}
-          <div className="space-y-16 mb-20">
+          <div className="space-y-12 sm:space-y-16 mb-12 sm:mb-20">
             {caseStudies.map((study) => (
               <Card 
                 key={study.id}
-                className="p-8 md:p-12 bg-card/50 backdrop-blur-sm border-border hover:border-accent/50 transition-all duration-300"
+                className="p-6 sm:p-8 md:p-12 bg-card/50 backdrop-blur-sm border-border hover:border-accent/50 transition-all duration-300"
               >
-                <div className="grid md:grid-cols-2 gap-12">
+                <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
                   {/* Left Column - Context */}
-                  <div className="space-y-6">
-                    <div className="flex items-center gap-4">
+                  <div className="space-y-4 sm:space-y-6">
+                    <div className="flex flex-wrap items-center gap-3 sm:gap-4">
                       <Badge variant="outline" className="text-accent border-accent/50">
                         {study.industry}
                       </Badge>
-                      <span className="text-sm text-muted-foreground">{study.location}</span>
+                      <span className="text-xs sm:text-sm text-muted-foreground">{study.location}</span>
                     </div>
                     
                     <div>
-                      <h3 className="text-3xl font-bold mb-2">{study.dealership}</h3>
-                      <p className="text-muted-foreground">
+                      <h3 className="text-2xl sm:text-3xl font-bold mb-2">{study.dealership}</h3>
+                      <p className="text-sm sm:text-base text-muted-foreground">
                         {study.challenge}
                       </p>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold mb-2 text-accent">The Solution</h4>
-                      <p className="text-muted-foreground">
+                      <h4 className="font-semibold mb-2 text-accent text-sm sm:text-base">The Solution</h4>
+                      <p className="text-sm sm:text-base text-muted-foreground">
                         {study.solution}
                       </p>
                     </div>
                   </div>
 
                   {/* Right Column - Results */}
-                  <div className="space-y-6">
-                    <h4 className="font-semibold mb-4">Results</h4>
-                    <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-4 sm:space-y-6">
+                    <h4 className="font-semibold mb-4 text-base sm:text-lg">Results</h4>
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4">
                       {study.results.map((result, idx) => (
                         <Card 
                           key={idx}
-                          className="p-4 bg-secondary/20 border-border text-center"
+                          className="p-3 sm:p-4 bg-secondary/20 border-border text-center"
                         >
-                          <result.icon className="w-8 h-8 mx-auto mb-2 text-accent" />
-                          <div className="text-2xl font-bold mb-1">{result.value}</div>
+                          <result.icon className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-1 sm:mb-2 text-accent" />
+                          <div className="text-lg sm:text-2xl font-bold mb-1">{result.value}</div>
                           <div className="text-xs text-muted-foreground">{result.metric}</div>
                         </Card>
                       ))}
                     </div>
                     
-                    <Card className="p-6 bg-accent/10 border-accent/30">
-                      <p className="text-sm italic mb-4">"{study.quote}"</p>
+                    <Card className="p-4 sm:p-6 bg-accent/10 border-accent/30">
+                      <p className="text-xs sm:text-sm italic mb-3 sm:mb-4">"{study.quote}"</p>
                       <div>
-                        <div className="font-semibold">{study.author}</div>
+                        <div className="font-semibold text-sm sm:text-base">{study.author}</div>
                         <div className="text-xs text-muted-foreground">{study.role}</div>
                       </div>
                     </Card>
@@ -142,9 +142,9 @@ const CaseStudies = () => {
           </div>
 
           {/* CTA Section */}
-          <Card className="p-12 bg-gradient-to-br from-accent/10 to-secondary/20 border-accent/30 text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Write Your Success Story?</h2>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <Card className="p-8 sm:p-12 bg-gradient-to-br from-accent/10 to-secondary/20 border-accent/30 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 px-4">Ready to Write Your Success Story?</h2>
+            <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
               Join hundreds of dealerships already using ReadyReserve™ to transform their lead management.
             </p>
             <button 
@@ -163,7 +163,7 @@ const CaseStudies = () => {
                   navigate('/contact');
                 }
               }}
-              className="px-8 py-4 bg-accent text-accent-foreground font-semibold uppercase tracking-wider rounded-md hover:bg-accent/90 transition-colors"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-accent text-accent-foreground font-semibold uppercase tracking-wider rounded-md hover:bg-accent/90 transition-colors text-sm sm:text-base"
             >
               Start Your Free Trial
             </button>

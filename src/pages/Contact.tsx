@@ -50,27 +50,27 @@ const Contact = () => {
 
   return (
     <PageLayout>
-      <section className="py-24 px-4">
+      <section className="py-16 sm:py-24 px-4">
         <div className="container mx-auto">
           {/* Header */}
-          <div className="text-center mb-20 space-y-6">
-            <div className="inline-flex items-center gap-4 mb-8 px-6 py-3 rounded-full border border-accent/30 bg-accent/5">
-              <span className="text-sm text-muted-foreground">Get started today</span>
-              <div className="w-px h-6 bg-accent/30" />
-              <span className="font-semibold">14-day free trial</span>
+          <div className="text-center mb-12 sm:mb-20 space-y-4 sm:space-y-6">
+            <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-6 sm:mb-8 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-accent/30 bg-accent/5">
+              <span className="text-xs sm:text-sm text-muted-foreground">Get started today</span>
+              <div className="w-px h-4 sm:h-6 bg-accent/30" />
+              <span className="font-semibold text-xs sm:text-sm">14-day free trial</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold px-4">
               Book Your Free Demo
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
               See ReadyReserve™ in action. Schedule a personalized demo tailored to your dealership's needs.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 max-w-5xl mx-auto">
             {/* Contact Form */}
-            <Card id="contact-form" className="p-8 bg-card/50 backdrop-blur-sm border-border">
-              <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
+            <Card id="contact-form" className="p-6 sm:p-8 bg-card/50 backdrop-blur-sm border-border">
+              <h2 className="text-xl sm:text-2xl font-bold mb-6">Get in Touch</h2>
               
               {submitted ? (
                 <div className="text-center py-12 space-y-4">
@@ -86,7 +86,7 @@ const Contact = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="firstName">First Name *</Label>
                       <Input

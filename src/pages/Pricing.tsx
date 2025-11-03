@@ -69,45 +69,45 @@ const Pricing = () => {
 
   return (
     <PageLayout>
-      <section className="py-24 px-4">
+      <section className="py-16 sm:py-24 px-4">
         <div className="container mx-auto">
           {/* Header */}
-          <div className="text-center mb-20 space-y-6">
-            <div className="inline-flex items-center gap-4 mb-8 px-6 py-3 rounded-full border border-accent/30 bg-accent/5">
-              <span className="text-sm text-muted-foreground">Transparent pricing</span>
-              <div className="w-px h-6 bg-accent/30" />
-              <span className="font-semibold">No hidden fees</span>
+          <div className="text-center mb-12 sm:mb-20 space-y-4 sm:space-y-6">
+            <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-6 sm:mb-8 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-accent/30 bg-accent/5">
+              <span className="text-xs sm:text-sm text-muted-foreground">Transparent pricing</span>
+              <div className="w-px h-4 sm:h-6 bg-accent/30" />
+              <span className="font-semibold text-xs sm:text-sm">No hidden fees</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold px-4">
               Choose Your Plan
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
               Start with a free 14-day trial. No credit card required. Cancel anytime.
             </p>
           </div>
 
           {/* Pricing Cards */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mb-12 sm:mb-20">
             {pricingPlans.map((plan, index) => (
               <Card 
                 key={index}
-                className={`p-8 bg-card/50 backdrop-blur-sm border-border hover:border-accent/50 transition-all duration-300 ${
-                  plan.popular ? 'border-accent border-2 relative' : ''
+                className={`p-6 sm:p-8 bg-card/50 backdrop-blur-sm border-border hover:border-accent/50 transition-all duration-300 ${
+                  plan.popular ? 'border-accent border-2 relative sm:col-span-2 lg:col-span-1' : ''
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent text-accent-foreground text-xs font-semibold uppercase tracking-wider rounded-full">
+                  <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 px-3 sm:px-4 py-1 bg-accent text-accent-foreground text-xs font-semibold uppercase tracking-wider rounded-full">
                     Most Popular
                   </div>
                 )}
                 
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                <div className="text-center mb-6 sm:mb-8">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2">{plan.name}</h3>
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-4xl font-bold">{plan.price}</span>
-                    <span className="text-muted-foreground">{plan.period}</span>
+                    <span className="text-3xl sm:text-4xl font-bold">{plan.price}</span>
+                    <span className="text-muted-foreground text-sm sm:text-base">{plan.period}</span>
                   </div>
-                  <p className="text-sm text-muted-foreground mt-4">
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4">
                     {plan.description}
                   </p>
                 </div>
