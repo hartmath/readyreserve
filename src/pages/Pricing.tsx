@@ -6,54 +6,52 @@ import { useNavigate } from "react-router-dom";
 
 const pricingPlans = [
   {
-    name: "Starter",
-    price: "$2,997",
+    name: "Standard",
+    upfront: "$120k",
+    monthly: "$2.5k",
     period: "/month",
-    description: "Perfect for smaller dealerships getting started with AI.",
+    description: "Full ownership. Dealer-owned infrastructure.",
     features: [
-      "Up to 300 leads/month",
-      "24/7 automated follow-up",
-      "SMS & Email automation",
-      "Basic reporting dashboard",
-      "Email support",
-      "14-day setup period",
+      "Complete system ownership",
+      "All AI agents included",
+      "Offline mesh architecture",
+      "24/7 monitoring",
+      "Dedicated Linux node",
+      "White-label eligible",
     ],
-    cta: "Start Free Trial",
+    cta: "Get Started",
     popular: false,
   },
   {
-    name: "Professional",
-    price: "$5,997",
+    name: "Growth",
+    upfront: "$75k",
+    monthly: "$1.5k",
     period: "/month",
-    description: "Ideal for growing dealerships handling high lead volume.",
+    description: "Lower upfront cost with revenue share option.",
     features: [
-      "Up to 1,000 leads/month",
-      "24/7 automated follow-up",
-      "SMS, Email & Social DMs",
-      "Advanced analytics & reports",
+      "Reduced upfront investment",
+      "Revenue share model available",
+      "All AI agents included",
+      "Scalable architecture",
       "Priority support",
-      "7-day setup period",
-      "CRM integration",
-      "Custom workflows",
+      "Growth-focused pricing",
     ],
-    cta: "Start Free Trial",
+    cta: "Get Started",
     popular: true,
   },
   {
-    name: "Enterprise",
-    price: "Custom",
+    name: "OEM License",
+    upfront: "$1.5M+",
+    monthly: "—",
     period: "",
-    description: "For large dealerships with complex requirements.",
+    description: "Enterprise rollout for manufacturers and large groups.",
     features: [
-      "Unlimited leads",
-      "24/7 automated follow-up",
-      "All channel support",
-      "Custom dashboards",
-      "Dedicated account manager",
-      "Custom setup timeline",
-      "All CRM integrations",
-      "Custom AI training",
-      "White-label options",
+      "Multi-location deployment",
+      "Custom integration",
+      "Enterprise support",
+      "Volume pricing",
+      "Dedicated team",
+      "Custom development",
     ],
     cta: "Contact Sales",
     popular: false,
@@ -64,7 +62,7 @@ const Pricing = () => {
   const navigate = useNavigate();
   const scrollToContact = () => {
     // Always navigate to contact page from pricing page
-    navigate('/contact');
+      navigate('/contact');
   };
 
   return (
@@ -86,6 +84,15 @@ const Pricing = () => {
             </p>
           </div>
 
+          {/* ROI Widget */}
+          <Card className="p-6 sm:p-8 bg-gradient-to-br from-accent/10 to-secondary/20 border-accent/30 mb-12 sm:mb-20 max-w-2xl mx-auto">
+            <div className="text-center">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-2 text-accent">Average ROI</h3>
+              <p className="text-4xl sm:text-5xl font-bold mb-2">$250k / yr</p>
+              <p className="text-sm sm:text-base text-muted-foreground">Profit increase per dealership</p>
+            </div>
+          </Card>
+
           {/* Pricing Cards */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mb-12 sm:mb-20">
             {pricingPlans.map((plan, index) => (
@@ -103,9 +110,18 @@ const Pricing = () => {
                 
                 <div className="text-center mb-6 sm:mb-8">
                   <h3 className="text-xl sm:text-2xl font-bold mb-2">{plan.name}</h3>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-3xl sm:text-4xl font-bold">{plan.price}</span>
-                    <span className="text-muted-foreground text-sm sm:text-base">{plan.period}</span>
+                  <div className="space-y-2 mb-3">
+                    <div>
+                      <span className="text-xs sm:text-sm text-muted-foreground">Upfront: </span>
+                      <span className="text-2xl sm:text-3xl font-bold">{plan.upfront}</span>
+                    </div>
+                    {plan.monthly !== "—" && (
+                      <div>
+                        <span className="text-xs sm:text-sm text-muted-foreground">Monthly: </span>
+                        <span className="text-xl sm:text-2xl font-bold">{plan.monthly}</span>
+                        <span className="text-muted-foreground text-sm sm:text-base">{plan.period}</span>
+                      </div>
+                    )}
                   </div>
                   <p className="text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4">
                     {plan.description}

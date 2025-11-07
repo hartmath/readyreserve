@@ -1,36 +1,39 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Building2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-dealership.jpg";
 
 export const Hero = () => {
   const navigate = useNavigate();
 
-  const handleBookDemo = () => {
-    // Scroll to contact section if on home page, otherwise navigate to contact page
-    if (window.location.pathname === '/') {
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        const headerOffset = 100;
-        const elementPosition = contactSection.offsetTop;
-        const offsetPosition = elementPosition - headerOffset;
-        
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      } else {
-        // If no contact section, scroll to footer
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-      }
-    } else {
-      navigate('/contact');
+  const scrollToConfigurator = () => {
+    const element = document.getElementById('configurator');
+    if (element) {
+      const headerOffset = 100;
+      const elementPosition = element.offsetTop;
+      const offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
-  const handleVideoClick = () => {
-    // Navigate to case studies page to see it in action
-    navigate('/case-studies');
+  const handleSeeDemo = () => {
+    navigate('/contact');
+  };
+
+  const scrollToWhiteLabel = () => {
+    const element = document.getElementById('whitelabel');
+    if (element) {
+      const headerOffset = 100;
+      const elementPosition = element.offsetTop;
+      const offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
@@ -51,37 +54,30 @@ export const Hero = () => {
       <div className="container relative z-10 px-4 py-20 sm:py-32 text-center">
         <div className="max-w-5xl mx-auto space-y-6 sm:space-y-8 animate-fade-in">
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold leading-tight px-4">
-            You're Not{" "}
-            <span className="block">
-              Short on Leads
-            </span>
-            <span className="block">Just Follow-Up</span>
+            Own the Future of Your Dealership —{" "}
+            <span className="block mt-2 text-accent">Secure, Offline, and 100% Yours.</span>
           </h1>
 
           <p className="text-base sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto px-4">
-            <span className="text-accent font-semibold">ReadyReserve™</span> works every lead—engaging, following up,
-            <br className="hidden md:block" />
-            and booking appointments, 24/7.
+            Meet <span className="text-accent font-semibold">Genesis v3</span> — the dealer-owned AI infrastructure that automates sales, service, and profit.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Button variant="hero" size="xl" className="w-full sm:w-auto" onClick={handleBookDemo}>
-              <ArrowRight className="mr-2 h-5 w-5" />
-              BOOK A DEMO
+            <Button variant="hero" size="xl" className="w-full sm:w-auto" onClick={scrollToConfigurator}>
+              <Building2 className="mr-2 h-5 w-5" />
+              Build Your System
+            </Button>
+            <Button variant="outline" size="xl" className="w-full sm:w-auto" onClick={handleSeeDemo}>
+              <Play className="mr-2 h-5 w-5" />
+              See Full Demo
             </Button>
           </div>
 
-          {/* Video CTA */}
-          <div className="pt-8 sm:pt-12 px-4">
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 px-6 sm:px-8 py-6 rounded-lg bg-secondary/60 backdrop-blur-md border border-border">
-              <p className="text-sm text-muted-foreground max-w-md text-center sm:text-left">
-                Finally, a system that runs tight without running you ragged, no new hires, no CRM swap.
-              </p>
-              <Button variant="video" size="default" className="flex-shrink-0 w-full sm:w-auto" onClick={handleVideoClick}>
-                <Play className="mr-2 h-4 w-4 fill-current" />
-                SEE IT IN ACTION
-              </Button>
-            </div>
+          <div className="pt-4">
+            <Button variant="ghost" size="lg" className="text-accent hover:text-accent/80" onClick={scrollToWhiteLabel}>
+              <ArrowRight className="mr-2 h-4 w-4" />
+              Partner & White-Label Program
+            </Button>
           </div>
         </div>
       </div>

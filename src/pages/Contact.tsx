@@ -4,11 +4,19 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Phone, Mail, Clock, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
+    requestType: "",
     firstName: "",
     lastName: "",
     email: "",
@@ -30,6 +38,7 @@ const Contact = () => {
     setTimeout(() => {
       setSubmitted(false);
       setFormData({
+        requestType: "",
         firstName: "",
         lastName: "",
         email: "",
@@ -60,10 +69,10 @@ const Contact = () => {
               <span className="font-semibold text-xs sm:text-sm">14-day free trial</span>
             </div>
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold px-4">
-              Book Your Free Demo
+              Get Started with Genesis v3
             </h1>
             <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-              See ReadyReserve™ in action. Schedule a personalized demo tailored to your dealership's needs.
+              Book a demo, request pricing, or apply for our white-label program.
             </p>
           </div>
 
@@ -86,6 +95,24 @@ const Contact = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <Label htmlFor="requestType">Request Type *</Label>
+                    <Select
+                      value={formData.requestType}
+                      onValueChange={(value) => setFormData({ ...formData, requestType: value })}
+                      required
+                    >
+                      <SelectTrigger className="mt-1">
+                        <SelectValue placeholder="Select a request type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="demo">Book a Live Demo</SelectItem>
+                        <SelectItem value="pricing">Request Pricing PDF</SelectItem>
+                        <SelectItem value="whitelabel">Apply for White-Label</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="firstName">First Name *</Label>
@@ -175,7 +202,7 @@ const Contact = () => {
                   </div>
 
                   <Button type="submit" variant="hero" size="lg" className="w-full">
-                    Schedule My Demo
+                    Submit Request
                   </Button>
                 </form>
               )}
